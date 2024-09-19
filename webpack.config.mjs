@@ -68,7 +68,7 @@ const clientConfig = {
         test: /\.module\.css$/,
         exclude: /node_modules/,
         use: [
-          'style-loader',
+          MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
             options: {
@@ -103,7 +103,9 @@ const clientConfig = {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(), // Enables HMR
-    new MiniCssExtractPlugin({ filename: 'styles.css' }),
+    new MiniCssExtractPlugin({
+      filename: 'styles.css', // Extracted CSS file for client-side rendering
+    }),
     new webpack.DefinePlugin(getEnvironmentVariables()),
     new CopyPlugin({
       patterns: [
@@ -164,7 +166,6 @@ const serverConfig = {
         test: /\.module\.css$/,
         exclude: /node_modules/,
         use: [
-          'style-loader',
           {
             loader: 'css-loader',
             options: {

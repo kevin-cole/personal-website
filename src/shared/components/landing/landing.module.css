@@ -1,8 +1,21 @@
-.body
-{
-	clear: both;
+body {
+  clear: both;
 	margin: 0 auto;
 	width: 70%;
+  font-size: 13px;
+  font-family: 'Lucida Sans', Arial, sans-serif;
+  line-height: 13px;
+  text-align: left;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-color: #313131;
+}
+
+.header h1 {
+  color: #fff;
+  text-align:right;
 }
 
 .header nav {
@@ -46,12 +59,6 @@
   border-radius: 5px;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
-}
-
-.header img {
-  width: 30%;
-  height: auto;
-  margin: 3% 0;
 }
 
 .mainContent {

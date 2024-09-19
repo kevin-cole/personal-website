@@ -1,7 +1,7 @@
 import React from 'react'
-import * as styles from './app.module.css'
+import * as styles from './landing.module.css'
 
-const App = () => {
+const Landing = () => {
   return (
     <div className={styles.body}>
       <header className={styles.header}>
@@ -9,10 +9,10 @@ const App = () => {
         <nav>
 
           <ul>
-          <li className={styles.active}><a href="https://cdpn.io/rnHyB">Home</a></li>
-          <li><a href="https://cdpn.io/rnHyB" target="_blank">Portfolio</a></li>
-          <li><a href="https://cdpn.io/rnHyB" target="_blank">Blog</a></li>
-          <li><a href="https://cdpn.io/rnHyB" target="_blank">Contact</a></li>
+          <li className={styles.active}><a href={process.env.PUBLIC_HOME}>Home</a></li>
+          <li><a href={process.env.PUBLIC_BIO} target="_blank">Bio</a></li>
+          <li><a href={process.env.PUBLIC_RESUME} target="_blank">Resume</a></li>
+          <li><a href={process.env.PUBLIC_CONTACT} target="_blank">Contact</a></li>
         </ul></nav>
       </header>
 
@@ -86,4 +86,4 @@ const App = () => {
   )
 }
 
-export default App
+export default Landing

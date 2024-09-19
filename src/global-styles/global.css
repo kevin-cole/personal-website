@@ -25,28 +25,10 @@
 
 body {
   background: url("../assets/body-background.jpg") no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  background-color: #313131;
-  color: #000305;
-  font-size: 13px;
-  font-family: 'Lucida Sans', Arial, sans-serif;
-  line-height: 13px;
-  margin: 0;
-  padding: 0;
-  text-align: left;
 }
 
 h1 {
-  color: #fff;
   font-size: 28px;
-  font-family: 'Lobster', 'Lucida Sans', Arial, sans-serif;
-  line-height: 28px;
-  text-align:right;
-  float:right;
-  margin:30px 30px 0 0;
 }
 
 h2 {font-size: 22px}

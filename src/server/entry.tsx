@@ -7,7 +7,7 @@ import { ApolloProvider } from '@apollo/client/react'
 import { getDataFromTree } from '@apollo/client/react/ssr'
 import createApolloClient from '../client/create-apollo-client'
 import { expressMiddleware } from '@apollo/server/express4'
-import App from '../shared/app'
+import Landing from '../shared/components/landing'
 
 dotenv.config()
 const app: Application = express()
@@ -38,7 +38,7 @@ const startServer = async () => {
 
       const AppWithProvider = (
         <ApolloProvider client={client}>
-          <App />
+          <Landing />
         </ApolloProvider>
       )
 
@@ -56,6 +56,7 @@ const startServer = async () => {
           <html>
             <head>
               <title>SSR React App</title>
+              <link rel="stylesheet" href="/styles.css">
             </head>
             <body>
               <div id="root">${content}</div>
