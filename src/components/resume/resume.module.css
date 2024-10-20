@@ -1,0 +1,52 @@
+.body {
+  clear: both;
+	margin: 0 auto;
+	width: 70%;
+  font-size: 13px;
+  font-family: 'Lucida Sans', Arial, sans-serif;
+  line-height: 13px;
+  text-align: left;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.mainContent {
+  overflow: hidden;
+  line-height: 25px;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+}
+
+.content-1 {
+    background-color: rgba(255,255,255,0.8);	border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  padding: 3% 5%;
+  margin-bottom: 3%;
+}
+
+.content-2 {
+    background-color: rgba(255,255,255,0.8);	border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  padding: 3% 5%;
+}
+
+.content {
+  width: 68%;
+  float: left;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+}
+
+.post-from {
+  font-style: italic;
+  color: #999;
+  font-size: 85%;
+}

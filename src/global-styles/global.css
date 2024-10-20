@@ -54,13 +54,13 @@ a img {
 }
 
 a:link, a:visited {
-  color: #CF5C3F;
+  color: rgba(25, 81, 39, 0.5);
   padding: 0 1px;
   text-decoration: none;
 }
 
 a:hover, a:active {
-  background-color: rgba(207,92,63,0.5);
+  background-color: rgba(25, 81, 39, 0.5);
   color: #fff;
   text-decoration: none;
 }

@@ -1,0 +1,52 @@
+.header {
+    margin: auto;
+    width: 70%;
+}
+.header h1 {
+  color: #fff;
+  text-align: left;
+  padding-left: 2em;
+}
+
+.header nav {
+  background: rgba(0,0,0,0.3);
+  font-size: 1.143em;
+  height: 40px;
+  line-height: 30px;
+  margin: 0 auto 30px auto;
+  text-align: center;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+}
+
+.header nav ul {
+  list-style: none;
+  margin: 0 auto;
+}
+
+.header nav ul li {
+  float: left;
+  display: inline;
+}
+
+.header nav a:link {
+  color: #fff;
+  display: inline-block;
+  height: 30px;
+  padding: 5px 23px;
+  text-decoration: none;
+}
+
+.header nav a:hover, .header nav a:active,
+.header nav .active a:link, .header nav .active a:visited {
+  background-color: rgba(46, 115, 62, 0.5);
+  color: #fff;
+  text-shadow: none !important;
+}
+
+.header nav li a {
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+}

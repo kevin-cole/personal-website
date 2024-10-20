@@ -2,12 +2,14 @@ import express, { Application, Request, Response } from 'express'
 import React from 'react'
 import dotenv from 'dotenv'
 import ReactDOMServer from 'react-dom/server'
-import server from './create-apollo-server'
+import server from '../apollo/apollo-server/create-apollo-server'
 import { ApolloProvider } from '@apollo/client/react'
 import { getDataFromTree } from '@apollo/client/react/ssr'
-import createApolloClient from '../client/create-apollo-client'
+import createApolloClient from '../apollo/apollo-client/create-client'
 import { expressMiddleware } from '@apollo/server/express4'
-import Landing from '../shared/components/landing'
+import { StaticRouter } from 'react-router-dom/server'
+import { Helmet } from 'react-helmet'
+import Routes from '../components/routes'
 
 dotenv.config()
 const app: Application = express()
@@ -33,12 +35,13 @@ const startServer = async () => {
 
     // Other routes or middleware
     app.get('/*', async (req: Request, res: Response) => {
-      req
       const client = createApolloClient({}, req)
 
-      const AppWithProvider = (
+      const AppWithProvider = ReactDOMServer.renderToString(
         <ApolloProvider client={client}>
-          <Landing />
+          <StaticRouter location={req.url}>
+            <Routes />
+          </StaticRouter>
         </ApolloProvider>
       )
 
@@ -52,7 +55,7 @@ const startServer = async () => {
         // Extract the initial state from the Apollo store
         const initialState = client.extract()
 
-        const html = `
+        const index = `
           <html>
             <head>
               <title>SSR React App</title>
@@ -66,7 +69,13 @@ const startServer = async () => {
               <script src="client.bundle.js"></script>
             </body>
           </html>
-        `
+          `
+
+        const helmet = Helmet.renderStatic()
+
+        const html = index
+          .replace('<div id="root"></div>', `<div id="root">${AppWithProvider}</div>`)
+          .replace('</head>', `${helmet.title.toString()}${helmet.meta.toString()}</head>`);
 
         res.send(html)
       } catch(e) {

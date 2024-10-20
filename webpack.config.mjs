@@ -41,7 +41,7 @@ const clientConfig = {
   target: 'web',
   entry: async () => {
     const styleFiles = await getStyleFiles('./src/global-styles')
-    return ['./src/client/entry.tsx', ...styleFiles]
+    return ['./src/client/client.tsx', ...styleFiles]
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -138,7 +138,7 @@ if (process.env.ANALYZE) {
 // Server-side configuration
 const serverConfig = {
   mode: 'production',
-  entry: './src/server/entry.tsx',
+  entry: './src/server/server.tsx',
   target: 'node',
   externals: [nodeExternals()],
   output: {
